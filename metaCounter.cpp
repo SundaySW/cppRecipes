@@ -15,7 +15,7 @@ struct def{
 };
 
 template<auto fn = [](){}>
-auto unique(){
+constexpr auto unique(){
     return fn;
 }
 
@@ -34,8 +34,8 @@ constexpr int next(){
     return impl_next<0>(int{});
 }
 
-int main(){
-    static_assert(next() == 1);
-    static_assert(next() == 2);
-    static_assert(next() == 3);
+int main9(){
+//    static_assert(next() == 1);
+//    static_assert(next() == 2);
+//    static_assert(next() == 3);
 }

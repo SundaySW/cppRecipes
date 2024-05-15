@@ -5,7 +5,7 @@
 #include <iostream>
 #include "utility"
 
-template<typename, std::size_t Index>
+template<typename, std::size_t>
 struct DefInserter{
     friend constexpr auto get(DefInserter);
 };
@@ -20,7 +20,7 @@ struct DeclInserter{
 template<typename T, std::size_t Index>
 struct Caster{
     template<typename U, int = sizeof(DeclInserter<DefInserter<T, Index>, U>)>
-    operator U();
+        operator U();
 };
 
 template <typename U, std::size_t T0, std::size_t ... T>
